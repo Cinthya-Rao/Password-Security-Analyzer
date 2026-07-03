@@ -1,0 +1,23 @@
+# Maven build output
+target/
+
+# Project-local Maven cache used by sandboxed verification
+.m2/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Generated archives
+*.zip
+*.tar.gz
