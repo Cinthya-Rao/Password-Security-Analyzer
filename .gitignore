@@ -1,7 +1,7 @@
-# Maven build output
+# Maven
 target/
 
-# Project-local Maven cache used by sandboxed verification
+# Local Maven repository
 .m2/
 
 # IntelliJ IDEA
@@ -9,15 +9,8 @@ target/
 *.iml
 out/
 
-# OS metadata
+# macOS
 .DS_Store
-Thumbs.db
 
-# Logs and temporary files
-*.log
-*.tmp
-*.swp
-
-# Generated archives
-*.zip
-*.tar.gz
+# Java
+*.class
