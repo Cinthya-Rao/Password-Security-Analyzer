@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Analyzer</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0f141b;
+            --panel: #171e27;
+            --panel-soft: #1f2935;
+            --text: #e8eef6;
+            --muted: #a8b4c3;
+            --accent: #14b8a6;
+            --blue: #2563eb;
+            --border: #2b3644;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 56px 24px 34px;
+            background: linear-gradient(135deg, #151c25, #202b36);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.25rem, 6vw, 4.75rem);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin: 0 0 16px;
+            color: var(--muted);
+        }
+
+        .hero-text {
+            max-width: 760px;
+            font-size: 1.15rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            background: var(--blue);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button.secondary {
+            background: var(--panel-soft);
+            border: 1px solid var(--border);
+        }
+
+        main {
+            padding: 34px 0 56px;
+        }
+
+        section {
+            margin-top: 34px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
+        }
+
+        figure {
+            margin: 0;
+            padding: 12px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        pre {
+            overflow-x: auto;
+            padding: 16px;
+            background: #0a0e14;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        code {
+            color: #dbeafe;
+            font-family: "SFMono-Regular", Consolas, monospace;
+        }
+
+        footer {
+            padding: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1>Password Security Analyzer</h1>
+            <p class="hero-text">
+                A JavaFX desktop application that analyzes password strength locally, explains risk clearly,
+                and generates secure passwords using Java's SecureRandom.
+            </p>
+            <div class="actions">
+                <a class="button" href="https://github.com/Cinthya-Rao/Password-Security-Analyzer">View Source on GitHub</a>
+                <a class="button secondary" href="#run">Run Locally</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section>
+            <h2>Project Highlights</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Local Analysis</h3>
+                    <p>Passwords are analyzed on the user's computer and are never saved, logged, or transmitted.</p>
+                </div>
+                <div class="card">
+                    <h3>Security Feedback</h3>
+                    <p>Strength score, entropy, crack-time estimate, checklist results, warnings, and suggestions.</p>
+                </div>
+                <div class="card">
+                    <h3>Pattern Detection</h3>
+                    <p>Detects common passwords, repeated chunks, keyboard walks, sequences, dates, and phone-like values.</p>
+                </div>
+                <div class="card">
+                    <h3>Password Generator</h3>
+                    <p>Creates secure random passwords with configurable length, symbols, numbers, and ambiguity rules.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Screenshots</h2>
+            <div class="screenshots">
+                <figure>
+                    <img src="docs/screenshots/dashboard-empty-dark.png" alt="Password Security Analyzer dashboard in dark mode">
+                    <figcaption>Main dashboard in dark mode.</figcaption>
+                </figure>
+                <figure>
+                    <img src="docs/screenshots/analysis-strong-dark.png" alt="Strong password analysis results">
+                    <figcaption>Strong password analysis with score, entropy, and checklist.</figcaption>
+                </figure>
+                <figure>
+                    <img src="docs/screenshots/generator-empty-dark.png" alt="Secure password generator options">
+                    <figcaption>Secure password generator settings.</figcaption>
+                </figure>
+                <figure>
+                    <img src="docs/screenshots/generator-created-dark.png" alt="Generated password example">
+                    <figcaption>Generated password example.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="run">
+            <h2>Run The Desktop App</h2>
+            <p>This is a JavaFX desktop application, so the live GitHub Pages site is a portfolio page. Run the actual app locally with Maven:</p>
+            <pre><code>git clone https://github.com/Cinthya-Rao/Password-Security-Analyzer.git
+cd Password-Security-Analyzer
+mvn javafx:run</code></pre>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="grid">
+                <div class="card"><h3>Java 21+</h3><p>Core application logic and object-oriented architecture.</p></div>
+                <div class="card"><h3>JavaFX</h3><p>Desktop user interface with dark and light theme support.</p></div>
+                <div class="card"><h3>Maven</h3><p>Dependency management, build, test, and run workflow.</p></div>
+                <div class="card"><h3>JUnit 5</h3><p>Focused tests for analyzer and password generator behavior.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Built for cybersecurity awareness. Passwords stay local.
+    </footer>
+</body>
+</html>

@@ -2,6 +2,14 @@
 
 A modern JavaFX desktop application that analyzes password strength locally and provides practical security feedback. The project is designed for cybersecurity portfolio use and follows a simple MVC structure with separate model, service, controller, utility, and view layers.
 
+## Live Project Page
+
+Portfolio page:
+
+https://cinthya-rao.github.io/Password-Security-Analyzer/
+
+This page shows the project overview, screenshots, and run instructions. The analyzer itself is a JavaFX desktop application, so it runs locally with Maven rather than inside the browser.
+
 ## Features
 
 - Password input with show/hide, analyze, and clear controls
@@ -57,18 +65,26 @@ A modern JavaFX desktop application that analyzes password strength locally and 
 
 ## GitHub Upload
 
-To upload this project to a new GitHub repository:
+To upload this project to GitHub:
 
 ```bash
 git init
 git add .
 git commit -m "Initial password security analyzer"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/password-security-analyzer.git
+git remote add origin https://github.com/Cinthya-Rao/Password-Security-Analyzer.git
 git push -u origin main
 ```
 
-Replace `YOUR-USERNAME` with your GitHub username and use the repository URL GitHub gives you.
+If the repository already exists locally, use:
+
+```bash
+git add .
+git commit -m "Add GitHub Pages project page"
+git push
+```
+
+To enable the live project page, open the repository on GitHub, go to `Settings` > `Pages`, choose `Deploy from a branch`, select the `main` branch and `/root` folder, then save.
 
 ## Running the Application
 
@@ -110,6 +126,7 @@ PasswordSecurityAnalyzer/
 │   └── service/
 ├── docs/
 │   └── screenshots/
+├── index.html
 ├── pom.xml
 └── README.md
 ```
